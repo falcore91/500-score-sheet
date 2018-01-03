@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bf8e74c-7232-4502-8457-7373f484fb65" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/ScoreInput.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/ScoreInput.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,11 +43,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ScoreInput.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ScoreInput.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/ScoreInput.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="543">
                   <caret line="60" column="69" lean-forward="true" selection-start-line="60" selection-start-column="69" selection-end-line="60" selection-end-column="69" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="preferred-vcs.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.idea/preferred-vcs.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="68">
+                  <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -267,7 +273,7 @@
       <updated>1514926589283</updated>
       <workItem from="1514926590631" duration="2207000" />
       <workItem from="1514932549829" duration="95000" />
-      <workItem from="1514932690872" duration="5373000" />
+      <workItem from="1514932690872" duration="5507000" />
     </task>
     <task id="LOCAL-00001" summary="Boilerplate from &quot;create-react-app&quot;, some ide settings">
       <created>1514932006129</created>
@@ -276,11 +282,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514932006129</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Basics of a &quot;Score&quot; change input.&#10;Each team has a number input with 10 step ( but no enforcement ).&#10;Clicking &quot;Submit Score&quot; will display the change in score and new totals on the table.&#10;Initially populate as if a game was already being tracked.&#10;&#10;Minimal input validation and such at thi spoint.">
+      <created>1514939844787</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1514939844787</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7675000" />
+    <option name="totallyTimeSpent" value="7809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -343,7 +356,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Boilerplate from &quot;create-react-app&quot;, some ide settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Boilerplate from &quot;create-react-app&quot;, some ide settings" />
+    <MESSAGE value="Basics of a &quot;Score&quot; change input.&#10;Each team has a number input with 10 step ( but no enforcement ).&#10;Clicking &quot;Submit Score&quot; will display the change in score and new totals on the table.&#10;Initially populate as if a game was already being tracked.&#10;&#10;Minimal input validation and such at thi spoint." />
+    <option name="LAST_COMMIT_MESSAGE" value="Basics of a &quot;Score&quot; change input.&#10;Each team has a number input with 10 step ( but no enforcement ).&#10;Clicking &quot;Submit Score&quot; will display the change in score and new totals on the table.&#10;Initially populate as if a game was already being tracked.&#10;&#10;Minimal input validation and such at thi spoint." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -510,6 +524,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
           <caret line="60" column="69" lean-forward="true" selection-start-line="60" selection-start-column="69" selection-end-line="60" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/preferred-vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding />
         </state>
       </provider>
