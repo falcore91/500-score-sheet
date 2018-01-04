@@ -31,20 +31,23 @@ class PointsCell extends Component {
 class ScoreReference extends Component {
     renderHeaderRow(suits) {
         //suits should be array
-        return <tr>
+        return (
+            <tr>
             <th className={"score-reference"}/>
             {suits.map(function (suitName) {
                 return (<SuitHeader suit={suitName}/>)
             })}
         </tr>
+        )
     }
     renderScoreRow( trickCount ){
-        const baseScores = [ 40, 60, 80, 100, 120 ]
+        const suits = ["S", "C", "D", "H", "N"];
+        const baseScores = [ 40, 60, 80, 100, 120 ];
         return <tr>
             <TrickCountCell value={trickCount}/>
-            {baseScores.map( function( baseScore ) {
+            {suits.map( function( suit ) {
                 return (<PointsCell value={
-                    ((trickCount - 6) * 100) + baseScore}/>)
+                    bidValue( trickCount, suit)}/>)
             })}
         </tr>
 
@@ -54,40 +57,25 @@ class ScoreReference extends Component {
     render() {
         const trickCounts = [6, 7, 8, 9, 10 ]
         return (
+            <div>
             <table className="score-reference">
+                <tr><th colspan="10">Possible Bids</th></tr>
                 {this.renderHeaderRow(["Spades", "Clubs", "Diamonds", "Hearts", "No Trump"])}
                 {trickCounts.map( function( trickCount ){
                     return this.renderScoreRow( trickCount )
                 }, this)}
             </table>
-        )
-    }
-}
-
-class ScoreCard extends Component {
-    render() {
-        return (
-            <table className="score-card">
-                <tr>
-                    <th>
-                        hi
-                    </th>
-                </tr>
-            </table>
-
+            </div>
         )
     }
 }
 
 
 class Sheet extends Component {
-
     render() {
         return (
             <div className="sheet">
-                <ScoreCard/>
                 <ScoreReference/>
-
             </div>
         )
     }
@@ -101,14 +89,37 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
+                <div className="App-body" style={{"margin-left":"50px"}}>
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
                 <ScoreInput/>
+                <p/>
                 <Sheet/>
+                </div>
             </div>
         );
     }
 }
+
+function bidValue( trickCount, suit )
+    {
+    const baseScores = {
+        "S": 40,
+        "C": 60,
+        "D": 80,
+        "H": 100,
+        "N": 120
+    };
+
+    return baseScores[ suit ] + (trickCount - 6) * 100;
+    }
+            /*
+            "S"pades
+            "C"lubs
+            "D"iamonds
+            "H"earts
+            "N"o Trump
+             */
 
 export default App;
