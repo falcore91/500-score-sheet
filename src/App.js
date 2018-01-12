@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactTable from 'react-table'
+import 'react-table/react-table.css'
 import logo from './logo.svg';
 import suitsIcon from './4suits-2400px.png'
 import './App.css';
@@ -27,13 +29,28 @@ class TrickCountCell extends Component {
 
 class PointsCell extends Component {
     render() {
-        return (<td className="score-reference">
+        return (<td className="score-reference" onClick={
+            function(){
+                console.log("click " + this.props.value);
+                this.props.handleClick();
+            }.bind(this)}>
             {this.props.value}
         </td>)
     }
 }
 
 class ScoreReference extends Component {
+    constructor( props ) {
+        super( props );
+        this.state = {
+            selectedBid: null,
+            prettyBid: "N/A"
+        }
+    }
+    changeSelectedBid( bid ){
+        this.setState( { selectedBid: bid, prettyBid: ("" + bid.tricks + " " + bid.suit) }, function(){ console.log( JSON.stringify( this.state.selectedBid)  )}.bind(this) );
+    }
+
     renderHeaderRow(suits) {
         //suits should be array
         return (
@@ -46,13 +63,16 @@ class ScoreReference extends Component {
         )
     }
     renderScoreRow( trickCount ){
+        const self = this;
         const suits = ["S", "C", "D", "H", "N"];
         const baseScores = [ 40, 60, 80, 100, 120 ];
         return <tr>
             <TrickCountCell value={trickCount}/>
             {suits.map( function( suit ) {
-                return (<PointsCell value={
-                    bidValue( trickCount, suit)}/>)
+                return (<PointsCell
+                    value={ bidValue( trickCount, suit) }
+                    handleClick={ function handleBidSelection(){ this.changeSelectedBid( { suit: suit, tricks: trickCount } ) }.bind(self) }
+                />)
             })}
         </tr>
 
@@ -70,6 +90,17 @@ class ScoreReference extends Component {
                     return this.renderScoreRow( trickCount )
                 }, this)}
             </table>
+
+            <input value={this.state.prettyBid}>
+            </input>
+
+
+
+
+            <ReactTable
+                data={ [{ tricks: 6, spades: 40, clubs: 60}]}
+                columns={ [{Header:'', accessor: 'tricks'},{ Header: 'Spades', accessor: 'spades'},{Header:'Clubs', accessor:'clubs'}]}
+                />
             </div>
         )
     }
