@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import suitsIcon from './4suits-2400px.png'
 import './App.css';
 import ScoreInput from './components/ScoreInput.js'
 
+
+/*
+suits icon from https://openclipart.org/detail/171000/four-suits
+ */
 
 class SuitHeader extends Component {
     render() {
@@ -86,7 +91,7 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
+                    <img src={suitsIcon} className="App-logo" alt="logo"/>
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
                 <div className="App-body" style={{"margin-left":"50px"}}>
